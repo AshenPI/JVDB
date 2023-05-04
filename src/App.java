@@ -27,10 +27,10 @@ public class App {
             }
              prepStatement.executeUpdate();
 
-            // String discount = "update product set price = price - (price * 15/100) where category_id = 05";
-            // String del = "Delete from product where availability = 'out of stock'";
-            // stmt.executeUpdate(discount);
-            // stmt.executeUpdate(del);
+             String discount = "update product set price = price - (price * 15/100) where category_id = 05";
+             String del = "Delete from product where availability = 'out of stock'";
+             stmt.executeUpdate(discount);
+             stmt.executeUpdate(del);
             
        
              ResultSet rs = stmt.executeQuery("select * from seller");
