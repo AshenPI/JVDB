@@ -2,7 +2,7 @@ import java.sql.*;
 import java.util.*;
 public class App {
 
-    private static final String SQLInsert = "INSERT INTO SELLER (SELLER_NAME , EMAIL , POSTAL_ADDRESS) VALUES (? , ? ,?)";
+     private static final String SQLInsert = "INSERT INTO SELLER (SELLER_NAME , EMAIL , POSTAL_ADDRESS) VALUES (? , ? ,?)";
     public static void main(String[] args) throws Exception {
         
         try {
@@ -25,12 +25,12 @@ public class App {
                 prepStatement.setString(2, Email);
                 prepStatement.setString(3, postal);
             }
-            int row = prepStatement.executeUpdate();
+             prepStatement.executeUpdate();
 
-            String discount = "update product set price = price - (price * 0.15/100)where category_id = 05";
-            String del = "Delete from product where availability = 'out of stock'";
-            stmt.executeUpdate(discount);
-            stmt.executeUpdate(del);
+            // String discount = "update product set price = price - (price * 15/100) where category_id = 05";
+            // String del = "Delete from product where availability = 'out of stock'";
+            // stmt.executeUpdate(discount);
+            // stmt.executeUpdate(del);
             
        
              ResultSet rs = stmt.executeQuery("select * from seller");
@@ -39,10 +39,14 @@ public class App {
                 System.out.println("\n" + rs.getString(1) + "  " +
                  rs.getString(2) + "  " + 
                  rs.getString(3) +"  " 
+             
                
                 
                  
                  );
+
+
+              
                  
             con.close();
         } catch (Exception e) {
